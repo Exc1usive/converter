@@ -1,0 +1,7 @@
+<header *ngIf="currencyes">
+    <div>
+        <section *ngFor="let currency of currencyes">
+          1 {{currency.cc}} = {{currency.rate | number: '1.0-2'}} UAH
+        </section>
+    </div>
+</header>

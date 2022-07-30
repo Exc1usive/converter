@@ -1,0 +1,62 @@
+<div class="exchange-body">
+
+    <div class="box">
+    <h1>Convert</h1>
+    
+    <input 
+        type="number" 
+        min="0" 
+        class="input" 
+        placeholder="Type amount" 
+        value="from" 
+        [(ngModel)]="amountFrom"
+        (keyup)="convertFrom()" 
+        (change)="convertFrom()"
+    >
+    
+    <select 
+        [(ngModel)]="from" 
+        (change)="changeHandlingFrom()" 
+        #selectFrom
+        >
+        <option 
+            *ngFor="let currencyName of arrayOfCurrency" 
+            id="{{currencyName.r030}}" 
+            value="{{currencyName.cc}}"
+        >{{currencyName.cc}}</option>
+    
+    </select>
+    
+    <div class="equals">=</div>
+    
+    <input 
+        type="number" 
+        min="0" 
+        class="input" 
+        placeholder="Type amount" 
+        value="to" 
+        [(ngModel)]="amountTo" 
+        (keyup)="convertTo()" 
+        (change)="convertTo()"
+    >
+    
+    <select 
+        [(ngModel)]="to" 
+        (change)="changeHandlingTo()" 
+        #selectTo
+        >
+            <option 
+                *ngFor="let currencyName of arrayOfCurrency" 
+                id="{{currencyName.r030}}" 
+                value="{{currencyName.cc}}"
+            >{{currencyName.cc}}</option>
+    
+    </select>
+    <br>
+    <br>
+    <br>
+    <!-- <h1>asdasdasdsa</h1> -->
+    </div>
+    
+    </div>
+    

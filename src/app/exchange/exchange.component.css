@@ -1,0 +1,36 @@
+  .exchange-body {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px;
+  }
+
+  h1 {
+    margin: 0;
+    margin-bottom: .5rem;
+  }
+  
+  select {
+    margin-left: .5rem;
+  }
+  
+  .input {
+    border: 1px solid #333;
+    border-radius: .3rem;
+    padding: .25rem;
+    width: 7rem;
+  }
+  
+  .equals {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
+  .box {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 240px;
+    margin: auto;
+  }
