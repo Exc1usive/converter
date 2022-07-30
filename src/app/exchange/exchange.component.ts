@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { ExchangeRatesService } from '../services/exchange-rates.service';
@@ -18,12 +19,12 @@ export class ExchangeComponent implements OnInit {
   rateTo = 1;
   arrayOfCurrency: any[] = [];
   
-    getListOfCurrency() {
-      this.service.getRates().subscribe((res: object | null) => {
-        let obj = Object.create(res)
-        obj.map((item: any) => this.arrayOfCurrency.push(item))
-      })
-    }
+  getListOfCurrency() {
+    this.service.getRates().subscribe((res: object | null) => {
+      let obj = Object.create(res)
+      obj.map((item: any) => this.arrayOfCurrency.push(item))
+    })
+  }
 
   convertFrom(): number {
     this.amountTo = this.amountFrom * this.rateFrom / this.rateTo;
@@ -41,7 +42,6 @@ export class ExchangeComponent implements OnInit {
     this.arrayOfCurrency.map((item: any) => {
       if (item.cc === this.from) {
         this.rateFrom = item.rate 
-        console.log("from " + this.rateFrom);
       } 
       this.convertFrom();
     });
@@ -51,7 +51,6 @@ export class ExchangeComponent implements OnInit {
     this.arrayOfCurrency.map((item: any) => {
       if (item.cc === this.to) {
         this.rateTo = item.rate
-        console.log("to " + this.rateTo);
       }
       this.convertFrom();
     });
@@ -61,7 +60,6 @@ export class ExchangeComponent implements OnInit {
     this.service.getRates().subscribe((res: object | null) => {
       let obj = Object.create(res)
       obj.map((item: any) => this.arrayOfCurrency.push(item))
-      console.log(this.arrayOfCurrency);
     })
    }
 
